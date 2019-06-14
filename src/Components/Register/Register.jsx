@@ -11,7 +11,9 @@ class Register extends React.Component{
 
     render(){
         return(
-            <div></div>
+            <div>
+                Holi a todos 
+            </div>
         )
     }
 }
