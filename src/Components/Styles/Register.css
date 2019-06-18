@@ -1,0 +1,47 @@
+.style{
+    margin-left: auto;
+    margin-right: auto;    
+}
+
+.img{
+    margin-left: auto;
+    margin-right: auto;
+    display: flex;
+    align-content: center;
+}
+
+.input{
+    background-color: rgba(202, 238, 0, 0.40)
+}
+
+.icon{
+    margin-left: auto;
+    margin-right: auto;
+    display: flex;
+    align-content: center;
+    height: 20px;
+}
+
+.iconO{
+    margin-left: auto;
+    margin-right: auto;
+    display: flex;
+    height: 50px;
+    max-width: 100px;
+    align-items: center;
+
+}
+
+.inline{
+    display: inline;
+}
+
+.position{
+    margin-left: auto;
+    margin-right: auto;
+    background-color: #064650;
+}
+
+.borderBtn{
+    border: red
+}
