@@ -38,7 +38,7 @@ class App extends React.Component{
         <div className="App">
           <Switch>
             <Route exact path="/" render={() => this.state.user ? (<Timeline/>) : (<SignIn/>)} />
-            <Route exact path="/SignIn" component={Register} />
+            <Route exact path="/SignIn" render={ () => this.state.user ? (<Timeline/>) : (<Register />)} />
           </Switch>
         </div>
       </HashRouter>
