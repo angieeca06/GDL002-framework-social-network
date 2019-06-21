@@ -6,19 +6,32 @@ class LoginWithGoogle extends React.Component{
 
     constructor(){
         super();
+
+        this.state = {
+            user: {}
+        }
         this.signinWithGoogle = this.signinWithGoogle.bind(this);
+    }
+
+    componentWillMount(){
+        // console.log(this.props.user)
+        // this.setState({ user:{
+        //     name: user. 
+        //     }
+        // })
     }
 
     signinWithGoogle(e){
         e.preventDefault();
         const provider = new firebase.auth.GoogleAuthProvider();
         firebase.auth().signInWithPopup(provider).then(function(result) {
-            var user = result.user;
-            console.log(user);
-          }).catch(function(error) {
+            let user = result.user;
+            return user;
+          })
+          .catch(function(error) {
               console.log(error);
           });
-    }
+        }
 
     render(){
         return(

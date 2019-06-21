@@ -12,7 +12,8 @@ class App extends React.Component{
       super();
 
       this.state = {
-        user: {}
+        user: {},
+        userDB : {}
       }
       this.authListener = this.authListener.bind(this);
     }
@@ -25,6 +26,13 @@ class App extends React.Component{
     firebase.auth().onAuthStateChanged((user) =>{
       if(user){
         this.setState({user});
+        this.setState({ 
+          userDB: {
+            name: user.displayName,
+            email: user.email,
+            photo: user.photoURL
+          }
+        })
       }else{
         this.setState({user: null});
       }
@@ -32,13 +40,12 @@ class App extends React.Component{
   }
 
   render(){
-    console.log(this.state.user)
     return (
       <HashRouter basename="/">
         <div className="App">
           <Switch>
-            <Route exact path="/" render={() => this.state.user ? (<Timeline/>) : (<SignIn/>)} />
-            <Route exact path="/SignIn" render={ () => this.state.user ? (<Timeline/>) : (<Register />)} />
+            <Route exact path="/" render={() => this.state.user ? (<Timeline user={this.state.user}/>) : (<SignIn userDB={this.state.userDB}/>)} />
+            <Route exact path="/SignIn" render={ () => this.state.user ? (<Timeline user={this.state.user}/>) : (<Register userBD={this.state.userDB}/>)} />
           </Switch>
         </div>
       </HashRouter>

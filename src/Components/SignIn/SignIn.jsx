@@ -34,13 +34,14 @@ class SignIn extends React.Component{
     }
 
     render(){
+        console.log(this.props)
         return(
             <div >
                 <img src="https://fotos.subefotos.com/bf6de30544c23d1df2aad093e5688c92o.png" alt="..." className="img-fluid img col-md-4 col-sm-4" />
                 <form className="style col-md-8 " >
                     <div className="form-row">
                         <div className="col-md-12 mb-3 sm-3">
-                            <label for="email">Email</label>
+                            <label>Email</label>
                             <div className="input-group">
                                 <div className="input-group-prepend">
                                     <span className="input-group-text input" id="inputGroupPrepend2"><img className="icon" src={Email} alt="..."/></span>
@@ -49,7 +50,7 @@ class SignIn extends React.Component{
                             </div>
                         </div>
                         <div className="col-md-12 mb-3 sm-3">
-                        <label for="password">Contraseña</label>
+                        <label>Contraseña</label>
                             <div className="input-group">
                                 <div className="input-group-prepend">
                                     <span className="input-group-text input" id="inputGroupPrepend2"><img className="icon" src={Image} alt="..."/></span>
@@ -58,7 +59,7 @@ class SignIn extends React.Component{
                             </div>
                         </div>
                         <div className="form-group text-center">
-                            <a className="form-check-label" for="invalidCheck2" href="/#/SignIn">
+                            <a className="form-check-label" href="/#/SignIn">
                                 No tienes una cuenta 
                                 ¡Registrate!
                             </a>
@@ -76,7 +77,7 @@ class SignIn extends React.Component{
                             <Facebook />
                         </div>
                         <div className="col col-lg-3 col-md-3 col-sm-3">
-                            <Google />
+                            <Google user={this.props}/>
                         </div>
                         <div className="col col-lg-3 col-md-3 col-sm-3">
                         </div>
