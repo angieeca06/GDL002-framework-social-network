@@ -13,14 +13,6 @@ class LoginWithGoogle extends React.Component{
         this.signinWithGoogle = this.signinWithGoogle.bind(this);
     }
 
-    componentWillMount(){
-        // console.log(this.props.user)
-        // this.setState({ user:{
-        //     name: user. 
-        //     }
-        // })
-    }
-
     signinWithGoogle(e){
         e.preventDefault();
         const provider = new firebase.auth.GoogleAuthProvider();
@@ -35,7 +27,7 @@ class LoginWithGoogle extends React.Component{
 
     render(){
         return(
-            <button className="borderBtn bg-transparent col-lg-12 col-sm-12 " onClick={this.signinWithGoogle}><img className="iconO col-lg-4  col-sm-2 inline" src={Google} alt="..."/></button>
+            <button className="borderBtn bg-transparent col-lg-12 col-sm-12 " onClick={this.signinWithGoogle} ><img className="iconO col-lg-4  col-sm-2 inline" src={Google} alt="..."/></button>
         )
     }
 }

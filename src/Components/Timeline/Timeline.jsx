@@ -7,6 +7,7 @@ class Timeline extends React.Component{
 
     componentWillReceiveProps(){
         const userDB = this.props.user
+        console.log(userDB)
         const userBD = { 
             uid: userDB.uid,
             name: userDB.displayName,
@@ -16,8 +17,8 @@ class Timeline extends React.Component{
          if(userBD.uid === undefined){
              console.log("no");
          }else{
-             const userRef = firebase.database().ref("users/" + userDB.uid);
-             userRef.set(userBD)
+            const userRef = firebase.database().ref("users/" + userDB.uid);
+            userRef.set(userBD)
          }
        
     }

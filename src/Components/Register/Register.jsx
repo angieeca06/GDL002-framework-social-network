@@ -9,9 +9,10 @@ class Register extends React.Component{
         super();
 
         this.state = {
-            name : '',
+            displayName: '',
             email: '',
-            password: ''
+            password: '',
+            photoURL: "https://drogaspoliticacultura.net/wp-content/uploads/2017/09/placeholder-user.jpg"
         }
         this.handleChange = this.handleChange.bind(this);
         this.loginWithEmailAndPassword = this.loginWithEmailAndPassword.bind(this)
@@ -26,15 +27,23 @@ class Register extends React.Component{
 
     loginWithEmailAndPassword(e){
         e.preventDefault();
+        const displayName = this.state.displayName;
         console.log(this.state);
         const email = this.state.email;
         const password = this.state.password;
         firebase.auth().createUserWithEmailAndPassword(email, password)
+        .then(function(){
+            const user = firebase.auth().currentUser;
+            user.updateProfile({
+                displayName: displayName,
+                photoURL: "https://drogaspoliticacultura.net/wp-content/uploads/2017/09/placeholder-user.jpg"
+            })
+        })
         .catch(function(error) {
             console.log(error);
           });
     }
-   
+
 
     render(){
         return(
@@ -44,7 +53,7 @@ class Register extends React.Component{
                     <div className="form-row">
                         <div className="col-md-11 mb-3">
                             <label for="name">Nombre completo</label>
-                            <input type="text" onChange={this.handleChange} className="form-control input" id="name" placeholder="Nombre" required/>
+                            <input type="text" onChange={this.handleChange} className="form-control input" id="displayName" placeholder="Nombre" required/>
                         </div>
                         <div className="col-md-11 mb-3">
                             <label for="email">Email</label>
