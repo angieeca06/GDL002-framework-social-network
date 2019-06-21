@@ -27,7 +27,6 @@ class App extends React.Component{
     firebase.auth().onAuthStateChanged((user) =>{
       if(user){
         this.setState({user});
-        console.log(user.displayName);
         if(user.displayName === null){
           this.setState({
             userDB: {

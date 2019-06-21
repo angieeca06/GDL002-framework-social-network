@@ -7,7 +7,6 @@ class Timeline extends React.Component{
 
     componentWillReceiveProps(){
         const userDB = this.props.user
-        console.log(userDB)
         const userBD = { 
             uid: userDB.uid,
             name: userDB.displayName,
@@ -24,11 +23,12 @@ class Timeline extends React.Component{
     }
     
     render(){
+        const infoUser = this.props.user
         return(
             <div>
                 <NavbarComponents/>
                 <br/>
-                <CreatePost />
+                <CreatePost infoUser = {infoUser}/>
             </div>
         )
     }

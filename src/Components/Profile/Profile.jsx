@@ -3,14 +3,7 @@ import NavbarComponents from "../NavbarComponents";
 import "../Styles/profile.css"
 
 class Profile extends React.Component{
-    constructor(){
-        super();
-
-        this.state = {
-
-        }
-    }
-
+    
     render(){
         console.log(this.props.user)
         return(
