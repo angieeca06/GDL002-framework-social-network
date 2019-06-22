@@ -79,7 +79,7 @@ class Register extends React.Component{
                             </a>
                         </div>
                     </div>
-                    <button className="btn btn-primary position col-lg-11 col-sm-11 inline" type="submit" onClick={this.loginWithEmailAndPassword}>Registrarme</button>
+                    <button className=" btnStyles btn btn-primary position col-lg-11 col-sm-11 col-md-11 inline " type="submit" onClick={this.loginWithEmailAndPassword}>Registrarme</button>
                 </form>
             </div>
             
