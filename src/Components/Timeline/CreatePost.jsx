@@ -2,6 +2,7 @@ import React from "react";
 import Post from "../Images/Post.png";
 import firebase from "../Firebase/InicializacionFirebase";
 import moment from "moment";
+import "../Styles/createPost.css"
 
 class CreatePost extends React.Component{
 
@@ -44,7 +45,7 @@ class CreatePost extends React.Component{
         return(
             <div className="input-group flex-nowrap col-md-12">
                 <span className="input-group-text " id="addon-wrapping"><img className="icon" src={Post} alt="..."/></span>
-                <button type="button" className="form-control col-md-11 " placeholder="Crear un nueva publicación" data-toggle="modal" data-target="#exampleModal" aria-describedby="addon-wrapping">Crear una publicación</button>
+                <button type="button" className="form-control col-md-11 color" placeholder="Crear un nueva publicación" data-toggle="modal" data-target="#exampleModal" aria-describedby="addon-wrapping">Crear una publicación</button>
                 <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
                     <div class="modal-dialog" role="document">
                         <div class="modal-content">

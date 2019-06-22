@@ -17,7 +17,7 @@ class Timeline extends React.Component{
              console.log("no");
          }else{
             const userRef = firebase.database().ref("users/" + userDB.uid);
-            userRef.set(userBD)
+            userRef.set(userBD);
          }
        
     }
@@ -27,8 +27,9 @@ class Timeline extends React.Component{
         return(
             <div>
                 <NavbarComponents/>
-                <br/>
+                <br />
                 <CreatePost infoUser = {infoUser}/>
+                <br />
             </div>
         )
     }

@@ -21,7 +21,7 @@ class NavbarComponents extends React.Component{
 
     render(){
         return(
-            <nav className="navbar navbar-expand-lg navbar-light bg-light col-md-12">
+            <nav className="navbar  navBarColor navbar-expand-lg navbar-light  col-md-12">
                 <a className="navbar-brand col-md-3 col-sm-5 col-5"><Link to="/"><img className="logo img-fluid" alt="..." src="https://fotos.subefotos.com/bf6de30544c23d1df2aad093e5688c92o.png" /></Link></a>
                 <button className="navbar-toggler col-sm-2 col-2" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                     <span className="navbar-toggler-icon cool-sm-12 col-12"></span>
