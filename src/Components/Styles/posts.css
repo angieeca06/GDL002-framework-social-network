@@ -1,0 +1,22 @@
+.photoPost{
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    padding: 0%;
+}
+
+.header-color{
+    background-color: #064650cb;
+}
+
+.letter-color{
+    color: white
+}
+
+.content-color{
+    background-color: rgba(116, 199, 185, 0.400)
+}
+
+.button-align{
+    align-content: flex-end
+}

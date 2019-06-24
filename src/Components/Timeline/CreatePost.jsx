@@ -26,11 +26,13 @@ class CreatePost extends React.Component{
         const user = firebase.auth().currentUser;
         const userName = user.displayName;
         const messagePost = this.state.messagePost;
+        const photo = user.photoURL;
         const date = moment().format('lll')
         const post ={
             autor: userName,
             contenido: messagePost,
             fecha: date,
+            foto: photo
         };
         const postKey = firebase.database().ref("users/" + userId).child("post").push().key;
         var updates = {};
@@ -59,7 +61,7 @@ class CreatePost extends React.Component{
                             <form>
                             <div class="form-group">
                                 <label for="message-text" class="col-form-label">Que quisieras compartir?</label>
-                                <textarea class="form-control" value={this.state.messagePost} id="messagePost" onChange={this.handleChange} placeholder="¿Sobre qué quieres hablar?
+                                <textarea class="form-control font-color" value={this.state.messagePost} id="messagePost" onChange={this.handleChange} placeholder="¿Sobre qué quieres hablar?
                                     - Tips
                                     - Experiencias
                                     - Anecdotas
@@ -68,8 +70,8 @@ class CreatePost extends React.Component{
                             </form>
                         </div>
                         <div class="modal-footer">
-                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
-                            <button type="button" onClick={this.sendPostToFirebase} data-dismiss="modal" class="btn btn-primary">Publicar</button>
+                            <button type="button" class="btn font-color" data-dismiss="modal">Cerrar</button>
+                            <button type="button" onClick={this.sendPostToFirebase} data-dismiss="modal" class="btn font-color">Publicar</button>
                         </div>
                         </div>
                     </div>

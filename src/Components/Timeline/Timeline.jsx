@@ -2,6 +2,7 @@ import React from "react";
 import firebase from "../Firebase/InicializacionFirebase"
 import NavbarComponents from "../NavbarComponents";
 import CreatePost from "./CreatePost";
+import ShowPost from "./ShowPost";
 
 class Timeline extends React.Component{
 
@@ -19,8 +20,8 @@ class Timeline extends React.Component{
             const userRef = firebase.database().ref("users/" + userDB.uid);
             userRef.set(userBD);
          }
-       
     }
+
     
     render(){
         const infoUser = this.props.user
@@ -30,6 +31,7 @@ class Timeline extends React.Component{
                 <br />
                 <CreatePost infoUser = {infoUser}/>
                 <br />
+                <ShowPost infoUser = {infoUser}/>
             </div>
         )
     }
