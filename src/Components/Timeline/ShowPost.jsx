@@ -2,7 +2,7 @@ import React from "react";
 import firebase from "../Firebase/InicializacionFirebase";
 import "../Styles/posts.css";
 import options from "../Images/options.png";
-import DeletePost from "./DeletePost";
+import Swal from "sweetalert2";
 
 class ShowPost extends React.Component{
     constructor(){
@@ -11,7 +11,7 @@ class ShowPost extends React.Component{
         this.state={
             posts: []
         }
-        this.deletePost = this.deletePost.bind(this)
+        this.deletePost = this.deletePost.bind(this);
     }
 
     componentWillMount(){
@@ -35,14 +35,33 @@ class ShowPost extends React.Component{
     }
 
     deletePost = (e) => {
-        const dbPostsRef = firebase.database().ref();
-        const postsRef = dbPostsRef.child("posts/");
-        const userId = firebase.auth().currentUser.uid;
-        const postUserRef = dbPostsRef.child("user-posts/" + userId)
         const postId = e.target.id;
-        console.log(postId);
-        postsRef.child(postId).remove();
-        postUserRef.child(postId).remove();
+        e.preventDefault()
+        Swal.fire({
+            title: '¿Segur@ que quieres eliminar tu publicación?',
+            type: 'warning',
+            showCancelButton: true,
+            confirmButtonColor: '#CEE161',
+            cancelButtonColor: '#d33',
+            confirmButtonText: 'Sí, ¡Eliminar!'
+            }).then((result) => {
+                console.log(result)
+            if (result.value) {
+                Swal.fire(
+                '¡Eliminado!',
+                'Tu publicación ha sido eliminada',
+                'success'
+                )
+                const dbPostsRef = firebase.database().ref();
+                const postsRef = dbPostsRef.child("posts/");
+                const userId = firebase.auth().currentUser.uid;
+                const postUserRef = dbPostsRef.child("user-posts/" + userId)
+                console.log(postId);
+                postsRef.child(postId).remove();
+                postUserRef.child(postId).remove();
+            }
+            })
+       
     }
 
     render(){
@@ -50,7 +69,6 @@ class ShowPost extends React.Component{
             <div className="col-md-11 align-content-center mx-auto">
                 {this.state.posts.map((post, i) =>
                     <div className="card border-dark mb-3 align-content-center" key={i}>
-                        {console.log(post)}
                         <div className="card-header header-color container col-md-12 col-sm-12">
                             <div className="row">
                                 <div className="col col-md-2 col-sm-2 col-2">
@@ -67,14 +85,13 @@ class ShowPost extends React.Component{
                                             </button>
                                             <div className="dropdown-menu" aria-labelledby="dropdownMenuButton">
                                                 <button className="dropdown-item">Editar</button>
-                                                <button onClick={this.deletePost}  id={post.id} className="dropdown-item color">Eliminar</button>
-                                                {/* <DeletePost /> */}
+                                                <button type="button" onClick={this.deletePost} id={post.id} className="dropdown-item color btn">Eliminar</button>
                                             </div>
+                                            
                                         </div>                           
                                     </div>
                                 </div>
                             </div>
-                            {/* <br /> */}
                             <div className="card-body text-dark content-color">
                                 <h5 className="card-title">{post.fecha}</h5>
                                 <p className="card-text">{post.contenido}</p>

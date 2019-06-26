@@ -58,7 +58,7 @@ class App extends React.Component{
           <Switch>
             <Route exact path="/" render={() => this.state.user ? (<Timeline user={this.state.user}/>) : (<SignIn userDB={this.state.userDB}/>)} />
             <Route exact path="/SignIn" render={ () => this.state.user ? (<Timeline  user={this.state.user}/>) : (<Register userBD={this.state.userDB}/>)} />
-            <Route exact path="/Profile" render={() => <Profile user = {this.state.userDB}/>}/>
+            <Route exact path="/Profile" render={() => <Profile user = {this.state.userDB} objectUser = {this.state.user}/>}/>
           </Switch>
         </div>
       </HashRouter>
