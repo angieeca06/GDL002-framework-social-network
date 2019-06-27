@@ -4,16 +4,24 @@ import "../Styles/profile.css";
 import firebase from "../Firebase/InicializacionFirebase";
 import options from "../Images/options.png";
 
+
 class Profile extends React.Component{
     constructor(){
         super();
         this.state = {
 
         }
-
+        this.timeLinePostsProfile = this.timeLinePostsProfile.bind(this);
     }
 
-    componentWillMount(){
+    componentWillReceiveProps(){
+        const userId = this.props.objectUser;
+        console.log(userId)
+        userId ? this.timeLinePostsProfile(userId.uid) : console.log("error")
+        
+    }
+
+    timeLinePostsProfile(userId){
         function timeLinePosts(snapshot){
             let posts = []
 
@@ -23,16 +31,15 @@ class Profile extends React.Component{
             });
             return posts
         }
-        const userId = firebase.auth().currentUser;
         const dbPostsRef = firebase.database().ref();
-        const postsRef = dbPostsRef.child("user-posts/");
-        console.log(userId)
-        // postsRef.on("value", s=>{
-        //     const postForArray = timeLinePosts(s);
-        //     this.setState({
-        //         posts: postForArray
-        //     })
-        // })
+        const postsRef = dbPostsRef.child("user-posts/" + userId);
+        console.log(userId);
+        postsRef.on("value", s=>{
+            const postForArray = timeLinePosts(s);
+            this.setState({
+                posts: postForArray
+            })
+        })
     }
     
     render(){
@@ -44,8 +51,8 @@ class Profile extends React.Component{
                     <div className="card-body">
                         <h1 className="card-text text-center">{this.props.user.name}</h1>
                     </div>
-                    {/* <div className="col-md-11 align-content-center mx-auto">
-                        {this.state.posts.map((post, i) =>
+                    <div className="col-md-11 align-content-center mx-auto">
+                        {this.state.posts ? this.state.posts.map((post, i) =>
                             <div className="card border-dark mb-3 align-content-center" key={i}>
                                 <div className="card-header header-color container col-md-12 col-sm-12">
                                     <div className="row">
@@ -75,8 +82,8 @@ class Profile extends React.Component{
                                     </div>
                                 </div>
                             </div>
-                        )}
-                    </div> */}
+                        ): console.log("error")}
+                    </div>
                 </div>
             </div>
         )

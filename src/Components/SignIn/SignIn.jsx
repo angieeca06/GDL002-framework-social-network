@@ -73,7 +73,7 @@ class SignIn extends React.Component{
                         </div>
                     </div>
                     <div className="col-lg-12 inline col-sm-12">
-                        <button className="btn btn-primary position col-lg-11 col-sm-11 inline" type="submit" onClick={this.login}>Iniciar sesión</button>
+                        <button className="btn position col-lg-11 col-sm-11 inline" type="submit" onClick={this.login}>Iniciar sesión</button>
                     </div>
                 </form>
                 <div className="container">

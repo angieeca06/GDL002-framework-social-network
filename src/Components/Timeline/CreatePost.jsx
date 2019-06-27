@@ -2,7 +2,8 @@ import React from "react";
 import Post from "../Images/Post.png";
 import firebase from "../Firebase/InicializacionFirebase";
 import moment from "moment";
-import "../Styles/createPost.css"
+import "../Styles/createPost.css";
+import Swal from "sweetalert2";
 
 class CreatePost extends React.Component{
 
@@ -42,6 +43,19 @@ class CreatePost extends React.Component{
         updates['/user-posts/' + userId + '/' + postKey] = post;
         firebase.database().ref().update(updates);
         this.setState({ messagePost: ""})
+            Swal.fire({
+                type: 'success',    
+                title: 'Listo!',
+                showConfirmButton: false,
+                html: 'Tu post ha sido publicado!',
+                timer: 1500,
+            }).then((result) => {
+                if (
+                    result.dismiss === Swal.DismissReason.timer
+                ) {
+                    console.log('I was closed by the timer')
+                }
+            })
     }
 
     render(){

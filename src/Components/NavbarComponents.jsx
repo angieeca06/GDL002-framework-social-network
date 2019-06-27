@@ -29,7 +29,7 @@ class NavbarComponents extends React.Component{
                 <div className="collapse navbar-collapse col-md-9" id="navbarSupportedContent">
                     <ul className="navbar-nav mr-auto col-md-12">
                         <li className="nav-item active col-md-4">
-                            <a className="nav-link" to="/Profile"><Link to="/Profile">Perfil <span className="sr-only">(current)</span></Link></a>
+                            <a className="nav-link" to="/Profile"><Link to="/Profile" className="letterNav">Perfil <span className="sr-only">(current)</span></Link></a>
                         </li>
                         {/* <li className="nav-item dropdown active col-md-4">
                             <a className="nav-link dropdown-toggle "  id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -42,7 +42,7 @@ class NavbarComponents extends React.Component{
                             </div>
                         </li> */}
                         <li className="nav-item active col-md-4">
-                            <a className="nav-link" onClick={this.logOut}><Link to="/">Cerrar sesion<span className="sr-only">(current)</span></Link></a>
+                            <a className="nav-link" onClick={this.logOut}><Link to="/" className="letterNav">Cerrar sesion<span className="sr-only">(current)</span></Link></a>
                         </li>
                     </ul>
                 </div>

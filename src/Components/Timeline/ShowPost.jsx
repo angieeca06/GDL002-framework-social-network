@@ -51,11 +51,19 @@ class ShowPost extends React.Component{
             }).then((result) => {
                 console.log(result)
             if (result.value) {
-                Swal.fire(
-                '¡Eliminado!',
-                'Tu publicación ha sido eliminada',
-                'success'
-                )
+                Swal.fire({
+                    type: 'success',
+                    title: 'Listo!',
+                    showConfirmButton: false,
+                    html: 'Tu post ha sido eliminado!',
+                    timer: 1000,
+                }).then((result) => {
+                    if (
+                        result.dismiss === Swal.DismissReason.timer
+                    ) {
+                        console.log('I was closed by the timer')
+                    }
+                })
                 postsRef.child(postId).remove();
                 postUserRef.child(postId).remove();
             }
@@ -73,8 +81,8 @@ class ShowPost extends React.Component{
                                 <div className="col col-md-2 col-sm-2 col-2">
                                     <img className="photoPost" src={post.foto} alt="..."/>
                                 </div>
-                                <div className="col col-md-8 col-sm-8 col-7">
-                                    <span className=" letter-color">{post.autor}</span>
+                                <div className="col col-md-8 col-sm-8 col-7 letter-color">
+                                    <span className="letter-color">{post.autor}</span>
                                 </div>
                                 <div className="col col-md-2 col-sm-2 col-3">
                                     <div className="dropdown bg-transparent">
@@ -91,11 +99,12 @@ class ShowPost extends React.Component{
                                     </div>
                                 </div>
                             </div>
-                            <div className="card-body text-dark content-color">
-                                <h5 className="card-title">{post.fecha}</h5>
-                                <p className="card-text">{post.contenido}</p>
-                            </div>
                         </div>
+                            <div className="card-body text-dark content-color">
+                                <small className="card-title">{post.fecha}</small>
+                                <h4 className="card-text">{post.contenido}</h4>
+                            </div>
+                        
                     </div>
                 )}
             </div>

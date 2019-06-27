@@ -4,7 +4,7 @@ import Password from "../Images/Password.png";
 import "../Styles/Register.css";
 import firebase from "../Firebase/InicializacionFirebase";
 import Swal from "sweetalert2";
-    
+
 class Register extends React.Component{
     constructor(){
         super();
@@ -81,12 +81,12 @@ class Register extends React.Component{
                             </div>
                         </div>
                         <div className="form-group text-center">
-                            <a className="form-check-label" for="invalidCheck2" href="/#/">
+                            <a className="form-check-label " for="invalidCheck2" href="/#/">
                                 Ya tienes una cuenta
                             </a>
                         </div>
                     </div>
-                    <button className=" btnStyles btn btn-primary position col-lg-11 col-sm-11 col-md-11 inline " type="submit" onClick={this.loginWithEmailAndPassword}>Registrarme</button>
+                    <button className=" btnStyles btn position col-lg-11 col-sm-11 col-md-11 inline " type="submit" onClick={this.loginWithEmailAndPassword}>Registrarme</button>
                 </form>
             </div>
             

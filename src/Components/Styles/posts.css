@@ -6,12 +6,16 @@
 }
 
 .header-color{
-    background-color: #064650cb;
+    background-color: #FDBCC1;
+    min-height: 30px;
+    margin:0;
+    padding: 0%;
 }
 
 .letter-color{
-    color: white;
+    color: black;
     font-size: 20px;
+    text-align: center;
 }
 
 @media only screen and (max-width: 600px) {
@@ -29,7 +33,9 @@
   }
 
 .content-color{
-    background-color: rgba(116, 199, 185, 0.400)
+    background-color: #ffffff;
+    border: black;
+
 }
 
 .button-align{

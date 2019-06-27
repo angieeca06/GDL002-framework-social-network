@@ -12,5 +12,11 @@
 }
 
 .navBarColor{
-    background-color: #C5E6E1
+    background-color: #4F96BD
+}
+
+.letterNav{
+    color: black;
+    font-size: 20px;
+    font-weight: 500
 }
