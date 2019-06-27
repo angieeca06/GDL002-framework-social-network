@@ -35,8 +35,12 @@ class ShowPost extends React.Component{
     }
 
     deletePost = (e) => {
-        const postId = e.target.id;
         e.preventDefault()
+        const postId = e.target.id;
+        const userId = firebase.auth().currentUser.uid;
+        const dbPostsRef = firebase.database().ref();
+        const postsRef = dbPostsRef.child("posts/");
+        const postUserRef = dbPostsRef.child("user-posts/" + userId)
         Swal.fire({
             title: '¿Segur@ que quieres eliminar tu publicación?',
             type: 'warning',
@@ -52,11 +56,6 @@ class ShowPost extends React.Component{
                 'Tu publicación ha sido eliminada',
                 'success'
                 )
-                const dbPostsRef = firebase.database().ref();
-                const postsRef = dbPostsRef.child("posts/");
-                const userId = firebase.auth().currentUser.uid;
-                const postUserRef = dbPostsRef.child("user-posts/" + userId)
-                console.log(postId);
                 postsRef.child(postId).remove();
                 postUserRef.child(postId).remove();
             }

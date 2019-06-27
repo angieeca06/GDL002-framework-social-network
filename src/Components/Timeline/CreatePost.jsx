@@ -62,7 +62,7 @@ class CreatePost extends React.Component{
                             <form>
                             <div className="form-group">
                                 <label className="col-form-label">Que quisieras compartir?</label>
-                                <textarea className="form-control font-color" value={this.state.messagePost} id="messagePost" onChange={this.handleChange} placeholder="¿Sobre qué quieres hablar?
+                                <textarea autoFocus className="form-control font-color" value={this.state.messagePost} id="messagePost" onChange={this.handleChange} placeholder="¿Sobre qué quieres hablar?
                                     - Tips
                                     - Experiencias
                                     - Anecdotas

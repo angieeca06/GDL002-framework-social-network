@@ -5,6 +5,7 @@ import Email from "../Images/correo.png";
 import firebase from "../Firebase/InicializacionFirebase";
 import Google from "./Google";
 import Facebook from "./Facebook";
+import Swal from "sweetalert2";
 
 class SignIn extends React.Component{
     constructor(){
@@ -30,6 +31,12 @@ class SignIn extends React.Component{
         firebase.auth().signInWithEmailAndPassword(this.state.email, this.state.password)
         .catch((error)=>{
             console.log(error);
+            Swal.fire({
+                type: 'error',
+                title: 'Oops...',
+                text: 'Algo salio mal!',
+                footer: 'Vuelve a intetarlo'
+              })
         });
     }
 

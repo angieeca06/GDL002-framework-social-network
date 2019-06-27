@@ -2,8 +2,9 @@ import React from "react";
 import Email from "../Images/correo.png";
 import Password from "../Images/Password.png";
 import "../Styles/Register.css";
-import firebase from "../Firebase/InicializacionFirebase"
-
+import firebase from "../Firebase/InicializacionFirebase";
+import Swal from "sweetalert2";
+    
 class Register extends React.Component{
     constructor(){
         super();
@@ -41,6 +42,12 @@ class Register extends React.Component{
         })
         .catch(function(error) {
             console.log(error);
+            Swal.fire({
+                type: 'error',
+                title: 'Oops...',
+                text: 'Algo salio mal!',
+                footer: 'Vuelve a intetarlo'
+              })
           });
     }
 

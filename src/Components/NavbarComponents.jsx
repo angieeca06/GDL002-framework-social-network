@@ -31,7 +31,7 @@ class NavbarComponents extends React.Component{
                         <li className="nav-item active col-md-4">
                             <a className="nav-link" to="/Profile"><Link to="/Profile">Perfil <span className="sr-only">(current)</span></Link></a>
                         </li>
-                        <li className="nav-item dropdown active col-md-4">
+                        {/* <li className="nav-item dropdown active col-md-4">
                             <a className="nav-link dropdown-toggle "  id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                             Categorias
                             </a>
@@ -40,7 +40,7 @@ class NavbarComponents extends React.Component{
                                 <a className="dropdown-item" >Niños</a>
                                 <a className="dropdown-item" >Adolescentes</a>
                             </div>
-                        </li>
+                        </li> */}
                         <li className="nav-item active col-md-4">
                             <a className="nav-link" onClick={this.logOut}><Link to="/">Cerrar sesion<span className="sr-only">(current)</span></Link></a>
                         </li>
