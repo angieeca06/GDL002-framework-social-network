@@ -1,6 +1,5 @@
 import React from "react";
 import firebase from "../Firebase/InicializacionFirebase";
-import Facebook from "../Images/facebook.png";
 
 class LoginWithFacebook extends React.Component{
 
@@ -22,7 +21,10 @@ class LoginWithFacebook extends React.Component{
 
     render(){
         return(
-            <button className="borderBtn bg-transparent col-lg-12 col-sm-12 " onClick={this.signinWithFacebook}><img className="iconO col-lg-4  col-sm-2 inline" src={Facebook} alt="..."/></button>
+            <div>
+                <br/>
+                <button className="borderBtn bg-transparent col-lg-12 col-sm-12 " onClick={this.signinWithFacebook}><i class="fab fa-facebook-f iconO"></i></button>
+            </div>
         )
     }
 }

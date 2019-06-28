@@ -1,7 +1,6 @@
 import React from "react";
 import firebase from "../Firebase/InicializacionFirebase";
 import "../Styles/posts.css";
-import options from "../Images/options.png";
 import Swal from "sweetalert2";
 
 class ShowPost extends React.Component{
@@ -78,20 +77,20 @@ class ShowPost extends React.Component{
                     <div className="card border-dark mb-3 align-content-center" key={i}>
                         <div className="card-header header-color container col-md-12 col-sm-12">
                             <div className="row">
-                                <div className="col col-md-2 col-sm-2 col-2">
+                                <div className="col col-md-1 col-sm-1 col-1">
                                     <img className="photoPost" src={post.foto} alt="..."/>
                                 </div>
-                                <div className="col col-md-8 col-sm-8 col-7 letter-color">
+                                <div className="col col-md-9 col-sm-9 col-8 letter-color">
                                     <span className="letter-color">{post.autor}</span>
                                 </div>
                                 <div className="col col-md-2 col-sm-2 col-3">
                                     <div className="dropdown bg-transparent">
                                         <div className="container">
                                             <button className="btn dropdown-toggle col-md-11 dropdown-letter" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                                <img className="options" src={options} alt="options"/>
+                                                <i class="fas fa-ellipsis-h options"></i>                                            
                                             </button>
                                             <div className="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                                                <button className="dropdown-item">Editar</button>
+                                                {/* <button className="dropdown-item">Editar</button> */}
                                                 <button type="button" onClick={this.deletePost} id={post.id} className="dropdown-item color btn">Eliminar</button>
                                             </div>
                                             

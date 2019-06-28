@@ -1,5 +1,4 @@
 import React from "react";
-import Post from "../Images/Post.png";
 import firebase from "../Firebase/InicializacionFirebase";
 import moment from "moment";
 import "../Styles/createPost.css";
@@ -61,7 +60,7 @@ class CreatePost extends React.Component{
     render(){
         return(
             <div className="input-group flex-nowrap col-md-12">
-                <span className="input-group-text " id="addon-wrapping"><img className="icon" src={Post} alt="..."/></span>
+                <span className="input-group-text " id="addon-wrapping"><i class="fas fa-plus"></i></span>
                 <button type="button" className="form-control col-md-11 color" placeholder="Crear un nueva publicación" data-toggle="modal" data-target="#exampleModal" aria-describedby="addon-wrapping">Crear una publicación</button>
                 <div className="modal fade" id="exampleModal"  role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
                     <div className="modal-dialog" role="document">
@@ -75,7 +74,7 @@ class CreatePost extends React.Component{
                         <div className="modal-body">
                             <form>
                             <div className="form-group">
-                                <label className="col-form-label">Que quisieras compartir?</label>
+                                <label className="col-form-label">¿Qué quisieras compartir?</label>
                                 <textarea autoFocus className="form-control font-color" value={this.state.messagePost} id="messagePost" onChange={this.handleChange} placeholder="¿Sobre qué quieres hablar?
                                     - Tips
                                     - Experiencias

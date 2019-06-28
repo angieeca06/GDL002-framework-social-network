@@ -1,6 +1,4 @@
 import React from "react";
-import Email from "../Images/correo.png";
-import Password from "../Images/Password.png";
 import "../Styles/Register.css";
 import firebase from "../Firebase/InicializacionFirebase";
 import Swal from "sweetalert2";
@@ -55,7 +53,7 @@ class Register extends React.Component{
     render(){
         return(
             <div>
-                <img src="https://fotos.subefotos.com/bf6de30544c23d1df2aad093e5688c92o.png" alt="..." className="img-fluid img col-md-4 col-sm-4" />
+                <img src="https://fotos.subefotos.com/bf6de30544c23d1df2aad093e5688c92o.png" alt="..." className="img-fluid imgR col-md-4 col-sm-4" />
                 <form className="style col-md-10 ">
                     <div className="form-row">
                         <div className="col-md-11 mb-3">
@@ -66,7 +64,7 @@ class Register extends React.Component{
                             <label for="email">Email</label>
                             <div className="input-group">
                                 <div className="input-group-prepend">
-                                    <span className="input-group-text" id="inputGroupPrepend2"><img className="icon" src={Email} alt="..."/></span>
+                                    <span className="input-group-text" id="inputGroupPrepend2"><i class="far fa-envelope icon"></i></span>
                                 </div>
                                 <input type="email" onChange={this.handleChange} className="form-control input" id="email" placeholder="Username" aria-describedby="inputGroupPrepend2" required/>
                             </div>
@@ -75,7 +73,7 @@ class Register extends React.Component{
                             <label for="validationDefaultUsername">Contraseña</label>
                             <div className="input-group">
                                 <div className="input-group-prepend">
-                                    <span className="input-group-text" id="inputGroupPrepend2"><img className="icon" src={Password} alt="..."/></span>
+                                    <span className="input-group-text" id="inputGroupPrepend2"><i class="fas fa-lock icon"></i></span>
                                 </div>
                                 <input type="password" onChange={this.handleChange} className="form-control input" id="password" placeholder="Contraseña" aria-describedby="inputGroupPrepend2" required/>
                             </div>

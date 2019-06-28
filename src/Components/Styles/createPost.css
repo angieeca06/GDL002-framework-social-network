@@ -1,7 +1,8 @@
 .color{
-    background-color:#F2F096
+    background-color:#F2F096;
+    font-size: 20px
 }
 
 .font-color{
-    background-color: #4F96BD
+    background-color: rgba(79, 150, 189, 0.541)
 }
