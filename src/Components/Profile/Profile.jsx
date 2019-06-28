@@ -61,10 +61,10 @@ class Profile extends React.Component{
                             <div className="card border-dark mb-3 align-content-center" key={i}>
                                 <div className="card-header header-color container col-md-12 col-sm-12">
                                     <div className="row">
-                                        <div className="col col-md-1 col-sm-1 col-1">
+                                        <div className="col col-md-1 col-sm-1 col-2">
                                             <img className="photoPost" src={post.foto} alt="..."/>
                                         </div>
-                                        <div className="col col-md-9 col-sm-9 col-8 letter-color">
+                                        <div className="col col-md-9 col-sm-9 col-6 letter-color">
                                             <span className="letter-color">{post.autor}</span>
                                         </div>
                                         <div className="col col-md-2 col-sm-2 col-3">
@@ -74,7 +74,7 @@ class Profile extends React.Component{
                                                         <i class="fas fa-ellipsis-h options"></i>                                            
                                                     </button>
                                                     <div className="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                                                        <button className="dropdown-item">Editar</button>
+                                                        {/* <button className="dropdown-item">Editar</button> */}
                                                         <button onClick={this.deletePost}  id={post.id} className="dropdown-item color">Eliminar</button>
                                                     </div>
                                                 </div>                           
@@ -82,8 +82,8 @@ class Profile extends React.Component{
                                         </div>
                                     </div>
                                     <div className="card-body text-dark content-color">
-                                        <h5 className="card-title">{post.fecha}</h5>
-                                        <p className="card-text">{post.contenido}</p>
+                                        <small className="card-title">{post.fecha}</small>
+                                        <h4 className="card-text">{post.contenido}</h4>
                                     </div>
                                 </div>
                             </div>
