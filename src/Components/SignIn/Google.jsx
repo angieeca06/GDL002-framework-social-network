@@ -28,7 +28,7 @@ class LoginWithGoogle extends React.Component{
         return(
             <div>
                 <br/>
-                <button className="borderBtn bg-transparent col-lg-12 col-sm-12 " onClick={this.signinWithGoogle} ><i class="fab fa-google iconO"></i></button>
+                <button className="borderBtn bg-transparent col-lg-12 col-sm-12 " onClick={this.signinWithGoogle} ><i class="fab fa-google iconO iconG"></i></button>
             </div>
         )
     }

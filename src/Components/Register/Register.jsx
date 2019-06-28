@@ -52,7 +52,7 @@ class Register extends React.Component{
 
     render(){
         return(
-            <div>
+            <div className="register">
                 <img src="https://fotos.subefotos.com/bf6de30544c23d1df2aad093e5688c92o.png" alt="..." className="img-fluid imgR col-md-4 col-sm-4" />
                 <form className="style col-md-10 ">
                     <div className="form-row">
@@ -86,6 +86,7 @@ class Register extends React.Component{
                     </div>
                     <button className=" btnStyles btn position col-lg-11 col-sm-11 col-md-11 inline " type="submit" onClick={this.loginWithEmailAndPassword}>Registrarme</button>
                 </form>
+                <br/>
             </div>
             
         )

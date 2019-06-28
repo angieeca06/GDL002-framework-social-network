@@ -91,7 +91,7 @@ class ShowPost extends React.Component{
                                             </button>
                                             <div className="dropdown-menu" aria-labelledby="dropdownMenuButton">
                                                 {/* <button className="dropdown-item">Editar</button> */}
-                                                <button type="button" onClick={this.deletePost} id={post.id} className="dropdown-item color btn">Eliminar</button>
+                                                <button type="button" onClick={this.deletePost} id={post.id} className="dropdown-item btnColor btn">Eliminar</button>
                                             </div>
                                             
                                         </div>                           

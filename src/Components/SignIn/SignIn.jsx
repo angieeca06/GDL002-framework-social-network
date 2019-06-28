@@ -41,7 +41,7 @@ class SignIn extends React.Component{
     render(){
         console.log(this.props)
         return(
-            <div >
+            <div className="register">
                 <img src="https://fotos.subefotos.com/bf6de30544c23d1df2aad093e5688c92o.png" alt="..." className="img-fluid imgR col-md-4 col-sm-4" />
                 <form className="style col-md-8 " >
                     <div className="form-row">

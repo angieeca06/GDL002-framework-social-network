@@ -4,5 +4,20 @@
 }
 
 .font-color{
-    background-color: rgba(79, 150, 189, 0.541)
+    background-color: rgba(79, 150, 189, 0.329);
+}
+
+.cancelar{
+    background-color: rgba(255, 0, 0, 0.63);
+    color: wheat
+}
+
+.publicar{
+    background-color: rgba(0, 128, 0, 0.411);
+}
+
+.letterPost{
+    font-size: 25px;
+    text-align: center;
+    /* font-family: 'Literata', serif; */
 }

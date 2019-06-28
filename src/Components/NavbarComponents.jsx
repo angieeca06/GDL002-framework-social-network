@@ -42,7 +42,7 @@ class NavbarComponents extends React.Component{
                             </div>
                         </li> */}
                         <li className="nav-item active col-md-4">
-                            <a className="nav-link" onClick={this.logOut}><Link to="/" className="letterNav">Cerrar sesion<span className="sr-only">(current)</span></Link></a>
+                            <a className="nav-link" onClick={this.logOut}><Link to="/" className="letterNav">Cerrar sesión<span className="sr-only">(current)</span></Link></a>
                         </li>
                     </ul>
                 </div>
