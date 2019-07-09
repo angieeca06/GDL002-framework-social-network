@@ -4,6 +4,7 @@ import firebase from "../Firebase/InicializacionFirebase";
 import Google from "./Google";
 import Facebook from "./Facebook";
 import Swal from "sweetalert2";
+import {Link} from "react-router-dom";
 
 class SignIn extends React.Component{
     constructor(){
@@ -64,10 +65,12 @@ class SignIn extends React.Component{
                             </div>
                         </div>
                         <div className="form-group text-center">
-                            <a className="form-check-label" href="/#/SignIn">
-                                No tienes una cuenta 
-                                ¡Registrate!
-                            </a>
+                            <Link to="/SignIn">
+                                <a className="form-check-label">
+                                    No tienes una cuenta 
+                                    ¡Registrate!
+                                </a>
+                            </Link>
                         </div>
                     </div>
                     <div className="col-lg-12 inline col-sm-12">

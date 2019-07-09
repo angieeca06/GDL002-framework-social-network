@@ -31,16 +31,6 @@ class NavbarComponents extends React.Component{
                         <li className="nav-item active col-md-4">
                             <a className="nav-link" to="/Profile"><Link to="/Profile" className="letterNav">Perfil <span className="sr-only">(current)</span></Link></a>
                         </li>
-                        {/* <li className="nav-item dropdown active col-md-4">
-                            <a className="nav-link dropdown-toggle "  id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            Categorias
-                            </a>
-                            <div className="dropdown-menu" aria-labelledby="navbarDropdown">
-                                <a className="dropdown-item" >Bebés</a>
-                                <a className="dropdown-item" >Niños</a>
-                                <a className="dropdown-item" >Adolescentes</a>
-                            </div>
-                        </li> */}
                         <li className="nav-item active col-md-4">
                             <a className="nav-link" onClick={this.logOut}><Link to="/" className="letterNav">Cerrar sesión<span className="sr-only">(current)</span></Link></a>
                         </li>

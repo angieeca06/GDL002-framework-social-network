@@ -93,7 +93,6 @@ class ShowPost extends React.Component{
                                                 {/* <button className="dropdown-item">Editar</button> */}
                                                 <button type="button" onClick={this.deletePost} id={post.id} className="dropdown-item btnColor btn">Eliminar</button>
                                             </div>
-                                            
                                         </div>                           
                                     </div>
                                 </div>
