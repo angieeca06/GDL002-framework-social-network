@@ -1,19 +1,19 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "3069ce0e1227d342e41151a4fcfbcb0f",
+    "revision": "ef8e988b2d4256fa9442024d98049dcc",
     "url": "/GDL002-framework-social-network/index.html"
   },
   {
-    "revision": "ef020a48675c8c000503",
+    "revision": "b375a3f4826c7636f5c9",
     "url": "/GDL002-framework-social-network/static/css/main.a8a5d538.chunk.css"
   },
   {
-    "revision": "a63d961e5905f6e91e6b",
-    "url": "/GDL002-framework-social-network/static/js/2.7e6d8973.chunk.js"
+    "revision": "6b6bc8c763cd3169a0bb",
+    "url": "/GDL002-framework-social-network/static/js/2.1be2041c.chunk.js"
   },
   {
-    "revision": "ef020a48675c8c000503",
-    "url": "/GDL002-framework-social-network/static/js/main.45fd6e2f.chunk.js"
+    "revision": "b375a3f4826c7636f5c9",
+    "url": "/GDL002-framework-social-network/static/js/main.a9ec0b41.chunk.js"
   },
   {
     "revision": "6cead313ad965984df26",
