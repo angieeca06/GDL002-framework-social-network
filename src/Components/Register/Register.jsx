@@ -2,6 +2,7 @@ import React from "react";
 import "../Styles/Register.css";
 import firebase from "../Firebase/InicializacionFirebase";
 import Swal from "sweetalert2";
+import {Link} from "react-router-dom";
 
 class Register extends React.Component{
     constructor(){
@@ -79,9 +80,11 @@ class Register extends React.Component{
                             </div>
                         </div>
                         <div className="form-group text-center">
-                            <a className="form-check-label " for="invalidCheck2" href="/#/">
-                                Ya tienes una cuenta
-                            </a>
+                            <Link>
+                                <a className="form-check-label " for="invalidCheck2">
+                                    Ya tienes una cuenta
+                                </a>
+                            </Link>
                         </div>
                     </div>
                     <button className=" btnStyles btn position col-lg-11 col-sm-11 col-md-11 inline " type="submit" onClick={this.loginWithEmailAndPassword}>Registrarme</button>
