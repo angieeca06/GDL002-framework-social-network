@@ -80,7 +80,7 @@ class Register extends React.Component{
                             </div>
                         </div>
                         <div className="form-group text-center">
-                            <Link>
+                            <Link to="/">
                                 <a className="form-check-label " for="invalidCheck2">
                                     Ya tienes una cuenta
                                 </a>
