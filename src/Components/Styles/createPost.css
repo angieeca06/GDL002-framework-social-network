@@ -1,10 +1,11 @@
 .color{
-    background-color:#F2F096;
-    font-size: 20px
+    background-color: rgba(81, 168, 174, 0.57);
+    font-size: 20px;
+    font-weight: 600
 }
 
 .font-color{
-    background-color: rgba(79, 150, 189, 0.329);
+    background-color: rgba(143, 255, 221, 0.726);
 }
 
 .cancelar{
@@ -20,4 +21,15 @@
     font-size: 25px;
     text-align: center;
     /* font-family: 'Literata', serif; */
+}
+
+.createPost{
+    margin-left: auto;
+    margin-right: auto;
+}
+
+@media only screen and (max-width: 600px) {
+    .color{
+        font-size: 13px
+    }
 }

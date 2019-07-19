@@ -1,8 +1,8 @@
 .App{
-    max-width: 1000px;
     margin-left: auto;
     margin-right: auto;
-    background-color: rgba(254, 196, 175, 0.562);
-    background-size: cover;
+    /* background-color: rgba(25    4, 196, 175, 0.562); */
+    /* background-image: url("https://image.freepik.com/free-vector/abstract-connections-banner-design_1048-10068.jpg"); */
+    /* background-size: cover; */
     height: cover;
 }

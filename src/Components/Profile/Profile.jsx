@@ -16,7 +16,6 @@ class Profile extends React.Component{
 
     componentWillReceiveProps(){
         const userId = this.props.objectUser;
-        console.log(userId)
         userId ? this.timeLinePostsProfile(userId.uid) : console.log("error")
     }
 
@@ -36,7 +35,6 @@ class Profile extends React.Component{
         }
         const dbPostsRef = firebase.database().ref();
         const postsRef = dbPostsRef.child("user-posts/" + userId);
-        console.log(userId);
         postsRef.on("value", s=>{
             postForArray = timeLinePosts(s);
             this.setState({
@@ -47,7 +45,6 @@ class Profile extends React.Component{
     }
     
     render(){
-        console.log(this.state.posts)
         return(
             <div>
                 <NavbarComponents/>
@@ -56,7 +53,7 @@ class Profile extends React.Component{
                     <div className="card-body">
                         <h1 className="card-text text-center">{this.props.user.name}</h1>
                     </div>
-                    <div className="col-md-11 align-content-center mx-auto">
+                    <div className="col-md-8 align-content-center mx-auto">
                         {postForArray !== [] || undefined ? this.state.posts.map((post, i) =>
                             <div className="card border-dark mb-3 align-content-center" key={i}>
                                 <div className="card-header header-color container col-md-12 col-sm-12">
@@ -74,7 +71,6 @@ class Profile extends React.Component{
                                                         <i class="fas fa-ellipsis-h options"></i>                                            
                                                     </button>
                                                     <div className="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                                                        {/* <button className="dropdown-item">Editar</button> */}
                                                         <button onClick={this.deletePost}  id={post.id} className="dropdown-item color">Eliminar</button>
                                                     </div>
                                                 </div>                           

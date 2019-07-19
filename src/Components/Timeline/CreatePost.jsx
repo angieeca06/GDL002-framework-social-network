@@ -95,7 +95,7 @@ class CreatePost extends React.Component{
 
     render(){
         return(
-            <div className="input-group flex-nowrap col-md-12">
+            <div className="input-group flex-nowrap col-md-8 d-flex justify-content-center createPost">
                 <span className="input-group-text " id="addon-wrapping"><i class="fas fa-plus"></i></span>
                 <button type="button" 
                     onClick={this.resetPhoto} 

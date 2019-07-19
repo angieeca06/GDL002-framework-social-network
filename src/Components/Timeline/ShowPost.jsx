@@ -72,15 +72,15 @@ class ShowPost extends React.Component{
 
     render(){
         return(
-            <div className="col-md-11 align-content-center mx-auto">
+            <div className="col-md-8 align-content-center mx-auto">
                 {this.state.posts.map((post, i) =>
-                    <div className="card border-dark mb-3 align-content-center" key={i}>
+                    <div className="card border-dark mb-3 align-content-center bg-transparent" key={i}>
                         <div className="card-header header-color container col-md-12 col-sm-12">
                             <div className="row">
-                                <div className="col col-md-1 col-sm-1 col-1">
+                                <div className="col col-md-1 col-sm-1 col-2">
                                     <img className="photoPost" src={post.foto} alt="..."/>
                                 </div>
-                                <div className="col col-md-9 col-sm-9 col-8 letter-color">
+                                <div className="col col-md-9 col-sm-9 col-6 letter-color">
                                     <span className="letter-color">{post.autor}</span>
                                 </div>
                                 {console.log(post.photoUrl)}

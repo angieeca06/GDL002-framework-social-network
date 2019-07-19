@@ -55,7 +55,7 @@ class Register extends React.Component{
         return(
             <div className="register">
                 <img src="https://fotos.subefotos.com/bf6de30544c23d1df2aad093e5688c92o.png" alt="..." className="img-fluid imgR col-md-4 col-sm-4" />
-                <form className="style col-md-10 ">
+                <form className="style col-md-8 ">
                     <div className="form-row">
                         <div className="col-md-11 mb-3">
                             <label for="name">Nombre completo</label>

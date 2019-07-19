@@ -6,7 +6,7 @@
 }
 
 .header-color{
-    background-color: #FDBCC1;
+    background-image: linear-gradient(to right, #ffecd2 0%, #fcb69f 100%);
     min-height: 30px;
     margin:0;
     padding: 0%;
@@ -27,7 +27,7 @@
 
 @media only screen and (max-width: 600px) {
     .letter-color {
-        font-size: 15px;
+        font-size: 10px;
     }
     .options{
         width: 3px;
