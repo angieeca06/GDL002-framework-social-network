@@ -34,7 +34,6 @@ class SignIn extends React.Component{
                 type: 'error',
                 title: 'Oops...',
                 text: 'Algo salio mal!',
-                footer: 'Vuelve a intetarlo'
               })
         });
     }

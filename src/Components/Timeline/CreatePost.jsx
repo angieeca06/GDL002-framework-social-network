@@ -3,13 +3,16 @@ import firebase from "../Firebase/InicializacionFirebase";
 import moment from "moment";
 import "../Styles/createPost.css";
 import Swal from "sweetalert2";
+import FileUploader from 'react-firebase-file-uploader';
 
 class CreatePost extends React.Component{
 
     constructor(props){
         super(props);
         this.state={
-            user: {}
+            messagePost: "",
+            image: " ",
+            imageURL: " "
         }
         this.handleChange = this.handleChange.bind(this);
         this.sendPostToFirebase = this.sendPostToFirebase.bind(this)
@@ -25,18 +28,18 @@ class CreatePost extends React.Component{
         const userId = firebase.auth().currentUser.uid;
         const user = firebase.auth().currentUser;
         const userName = user.displayName;
-        const messagePost = this.state.messagePost;
         const photo = user.photoURL;
         const date = moment().format('lll');
         const postKey = firebase.database().ref("users/" + userId).child("post").push().key;
         const post ={
             autor: userName,
-            contenido: messagePost,
+            contenido: this.state.messagePost,
             fecha: date,
             foto: photo,
-            id: postKey
+            id: postKey,
+            photoUrl : this.state.imageURL
         };
-        console.log(postKey)
+        console.log(user)
         var updates = {};
         updates['/posts/' + postKey] = post;
         updates['/user-posts/' + userId + '/' + postKey] = post;
@@ -57,11 +60,51 @@ class CreatePost extends React.Component{
             })
     }
 
+    handleUploadStart = () => {
+        this.setState({
+          progress: 0 ,
+          progress: 100
+        })
+    }
+
+    handleUploadSuccess = fileName => {
+        this.setState({
+            image: fileName,
+        })
+
+        firebase.storage().ref('photos').child(fileName).getDownloadURL()
+            .then(url => this.setState({
+                imageURL: url
+            }))
+            .then(()=>{
+                Swal.fire({
+                    type: 'success',    
+                    title: 'Tu foto ha sido cargada',
+                    showConfirmButton: true,
+                })
+            })
+    }
+
+    resetPhoto = () =>{
+        this.setState({
+            imageURL: "",
+            FileUploader: []
+        })
+        console.log("resetPhoto")
+    }
+
     render(){
         return(
             <div className="input-group flex-nowrap col-md-12">
                 <span className="input-group-text " id="addon-wrapping"><i class="fas fa-plus"></i></span>
-                <button type="button" className="form-control col-md-11 color" placeholder="Crear un nueva publicación" data-toggle="modal" data-target="#exampleModal" aria-describedby="addon-wrapping">Haz click para crear una publicación</button>
+                <button type="button" 
+                    onClick={this.resetPhoto} 
+                    className="form-control col-md-11 color" 
+                    placeholder="Crear un nueva publicación" 
+                    data-toggle="modal" data-target="#exampleModal" 
+                    aria-describedby="addon-wrapping">
+                        Haz click para crear una publicación
+                </button>
                 <div className="modal fade" id="exampleModal"  role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
                     <div className="modal-dialog" role="document">
                         <div className="modal-content">
@@ -82,6 +125,17 @@ class CreatePost extends React.Component{
                                     - Recomendaciones" />
                             </div>
                             </form>
+                            <div clasName="container">
+                                <p>Espera a que tu foto se carge</p>
+                                {this.state.image && <img src= { this.state.imageURL } />}
+
+                                <FileUploader 
+                                accept = "image/*"
+                                name ='image'
+                                storageRef = { firebase.storage().ref('photos')}
+                                onUploadSuccess = { this.handleUploadSuccess }
+                                />
+                            </div>
                         </div>
                         <div className="modal-footer">
                             <button type="button" className="btn font-color cancelar" data-dismiss="modal">Cancelar</button>

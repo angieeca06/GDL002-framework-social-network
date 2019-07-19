@@ -19,6 +19,12 @@
     font-family: 'Literata', serif;
 }
 
+.imagePost{
+    height: 100px;
+    width: 100px;
+}
+
+
 @media only screen and (max-width: 600px) {
     .letter-color {
         font-size: 15px;

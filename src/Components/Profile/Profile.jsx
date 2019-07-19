@@ -84,6 +84,7 @@ class Profile extends React.Component{
                                     <div className="card-body text-dark content-color">
                                         <small className="card-title">{post.fecha}</small>
                                         <h4 className="card-text">{post.contenido}</h4>
+                                        <img className="imagePost" src={post.photoUrl} alt="photo" />
                                     </div>
                                 </div>
                             </div>

@@ -83,6 +83,7 @@ class ShowPost extends React.Component{
                                 <div className="col col-md-9 col-sm-9 col-8 letter-color">
                                     <span className="letter-color">{post.autor}</span>
                                 </div>
+                                {console.log(post.photoUrl)}
                                 <div className="col col-md-2 col-sm-2 col-3">
                                     <div className="dropdown bg-transparent">
                                         <div className="container">
@@ -90,7 +91,6 @@ class ShowPost extends React.Component{
                                                 <i class="fas fa-ellipsis-h options"></i>                                            
                                             </button>
                                             <div className="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                                                {/* <button className="dropdown-item">Editar</button> */}
                                                 <button type="button" onClick={this.deletePost} id={post.id} className="dropdown-item btnColor btn">Eliminar</button>
                                             </div>
                                         </div>                           
@@ -101,6 +101,7 @@ class ShowPost extends React.Component{
                             <div className="card-body text-dark content-color">
                                 <small className="card-title">{post.fecha}</small>
                                 <h4 className="card-text">{post.contenido}</h4>
+                                <img className="imagePost" src={post.photoUrl} alt="photo" />
                             </div>
                         
                     </div>

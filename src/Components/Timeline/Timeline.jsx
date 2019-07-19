@@ -7,6 +7,7 @@ import ShowPost from "./ShowPost";
 class Timeline extends React.Component{
 
     componentWillReceiveProps(){
+        console.log(this.props)
         const userDB = this.props.user
         const userBD = { 
             uid: userDB.uid,
